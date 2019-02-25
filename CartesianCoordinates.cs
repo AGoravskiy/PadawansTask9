@@ -20,6 +20,11 @@ namespace PadawansTask9
             List<Point> pointsInRange = new List<Point>();
             foreach (Point item in points)
             {
+                if (item.Equals(null))
+                {
+                    throw new ArgumentNullException();
+                }
+
                 if (Math.Abs(item.X - point.X) <= range && 
                     Math.Abs(item.Y - point.Y) <= range)
                 {
