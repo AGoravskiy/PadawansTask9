@@ -7,8 +7,27 @@ namespace PadawansTask9
     {
         public static List<Point> GetNeighbors(Point point, int range, params Point[] points)
         {
-            // put your code here
-            throw new NotImplementedException();
+            if (range < 0 || points.Length == 0)
+            {
+                throw new ArgumentException();
+            }
+
+            if (points == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            List<Point> pointsInRange = new List<Point>();
+            foreach (Point item in points)
+            {
+                if (Math.Abs(item.X - point.X) <= range && 
+                    Math.Abs(item.Y - point.Y) <= range)
+                {
+                    pointsInRange.Add(item);
+                }
+            }
+
+            return pointsInRange;
         }
     }
 }
