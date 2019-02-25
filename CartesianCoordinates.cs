@@ -12,7 +12,7 @@ namespace PadawansTask9
                 throw new ArgumentException();
             }
 
-            if (points == null)
+            if (points == null || point.Equals(null))
             {
                 throw new ArgumentNullException();
             }
